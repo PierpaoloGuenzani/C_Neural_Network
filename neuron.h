@@ -1,14 +1,13 @@
-
 struct neuron_s
 {
-    neuron_s* array_previous_neuron;
-    float* array_previous_weight;
-    neuron_s* array_next_neuron;
-    float* array_next_weight;
-
     float bias;
+    float dbias;
     float sum;
-    int out; //true 1, false 0 
+    float dsum;
+    float out; //true 1, false 0
+    float dout;
 };
 
 typedef struct neuron_s neuron;
+
+void print_neuron(neuron* neuron);
